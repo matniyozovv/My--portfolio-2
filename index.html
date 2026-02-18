@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansurbek | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loading-text">
+                <span>M</span>
+                <span>A</span>
+                <span>N</span>
+                <span>S</span>
+                <span>U</span>
+                <span>R</span>
+                <span>B</span>
+                <span>E</span>
+                <span>K</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent" style="display: none;">
+        <!-- 3D Background -->
+        <div class="background-3d" id="background3D"></div>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <span class="logo-text">M.Dev</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="active">Bosh sahifa</a></li>
+                    <li><a href="#about">Men haqimda</a></li>
+                    <li><a href="#skills">Ko'nikmalar</a></li>
+                    <li><a href="#experience">Tajriba</a></li>
+                    <li><a href="#projects">Loyihalar</a></li>
+                    <li><a href="#contact">Bog'lanish</a></li>
+                </ul>
+                <div class="nav-right">
+                    <button class="theme-toggle" onclick="toggleTheme()">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="menu-toggle" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="greeting">
+                        <span class="greeting-text">Assalomu alaykum, men</span>
+                        <div class="greeting-line"></div>
+                    </div>
+                    <h1 class="name">
+                        <span class="first-name">Mansurbek</span>
+                        <span class="last-name">Matniyozov </span>
+                    </h1>
+                    <div class="typed-container">
+                        <span class="typed-text" id="typedText"></span>
+                        <span class="cursor">&nbsp;</span>
+                    </div>
+                    <p class="hero-description">
+                        2 yillik tajribaga ega Frontend Developer. HTML, CSS, JavaScript,
+                        React va TypeScript texnologiyalarida mukammal darajada ishlayman.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                            <a href="https://t.me/matniyozovv_m" target="_blank" class="btn btn-primary telegram-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Telegram
+                            </a>
+                        </button>
+                        <button class="btn btn-outline" onclick="downloadCV()">
+                            <i class="fas fa-download"></i>
+                            CV yuklab olish
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/matniyozovv" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://t.me/matniyozovv_m" target="_blank" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="https://www.instagram.com/l7.matniyozovv" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-card-3d">
+                        <div class="profile-card-inner">
+                            <div class="profile-card-front">
+                                <div class="profile-glow"></div>
+                                <div class="profile-avatar">
+                                    <span> <img src="5.jpg" alt="Rasm bor"></span>
+                                </div>
+                                <h3>Mansurbek</h3>
+                                <p>Frontend Developer</p>
+                                <div class="profile-stats">
+                                    <div class="stat">
+                                        <span class="stat-value">2+</span>
+                                        <span class="stat-label">Yillik tajriba</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">25+</span>
+                                        <span class="stat-label">Loyihalar</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-value">15+</span>
+                                        <span class="stat-label">Mijozlar</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator" onclick="scrollToSection('about')">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Men <span class="gradient-text">haqimda</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Frontend Developer | React Mutaxassisi</h3>
+                        <p>
+                            Men Mansurbek, 2 yillik tajribaga ega Frontend Developer.
+                            Xiva shahrida istiqomat qilaman va hozirda "IT parkda"
+                            frontend developer sifatida o'qiyman.
+                        </p>
+                        <p>
+                            Men uchun kod yozish san'atdir. Har bir loyihaga ijodiy yondashib,
+                            foydalanuvchilarga qulay va chiroyli interfeyslar yaratishni maqsad qilaman.
+                            Doimiy ravishda yangi texnologiyalarni o'rganib, o'z bilimlarimni
+                            mustahkamlab boraman.
+                        </p>
+                        <div class="about-info">
+                            <div class="info-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>2 yillik tajriba</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Xorazm,  Xiva</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>matniyozovw.o10@gmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+998 91 437 31 33</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-cards">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <i class="fas fa-code"></i>
+                                    <h4>Clean Code</h4>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Har doim toza va optimallashtirilgan kod yozishga harakat qilaman</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <h4>Responsive Design</h4>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Barcha qurilmalarda mukammal ko'rinadigan dizaynlar</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <i class="fas fa-rocket"></i>
+                                    <h4>Performance</h4>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Tez va samarali ishlaydigan web ilovalar yaratish</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <i class="fas fa-users"></i>
+                                    <h4>Team Work</h4>
+                                </div>
+                                <div class="flip-card-back">
+                                    <p>Jamoa bilan samarali ishlash va muammolarni hal qilish</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Texnik <span class="gradient-text">ko'nikmalar</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3>Frontend Texnologiyalar</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card" data-progress="95">
+                                <div class="skill-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>HTML5</h4>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 95%"></div>
+                                    </div>
+                                    <span class="skill-percentage">95%</span>
+                                </div>
+                            </div>
+                            <div class="skill-card" data-progress="92">
+                                <div class="skill-icon">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>CSS3</h4>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 92%"></div>
+                                    </div>
+                                    <span class="skill-percentage">92%</span>
+                                </div>
+                            </div>
+                            <div class="skill-card" data-progress="90">
+                                <div class="skill-icon">
+                                    <i class="fab fa-js"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>JavaScript</h4>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 90%"></div>
+                                    </div>
+                                    <span class="skill-percentage">90%</span>
+                                </div>
+                            </div>
+                            <div class="skill-card" data-progress="80">
+                                <div class="skill-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>React</h4>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 80%"></div>
+                                    </div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                            </div>
+                            <div class="skill-card" data-progress="70">
+                                <div class="skill-icon">
+                                    <i class="fab fa-typescript"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <h4>TypeScript</h4>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 70%"></div>
+                                    </div>
+                                    <span class="skill-percentage">70%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Qo'shimcha texnologiyalar</h3>
+                        <div class="extra-skills">
+                            <div class="extra-skill">
+                                <span>Tailwind CSS</span>
+                                <div class="skill-level">
+                                    <div class="level-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="extra-skill">
+                                <span>Material UI</span>
+                                <div class="skill-level">
+                                    <div class="level-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="extra-skill">
+                                <span>Git & GitHub</span>
+                                <div class="skill-level">
+                                    <div class="level-fill" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="extra-skill">
+                                <span>Figma</span>
+                                <div class="skill-level">
+                                    <div class="level-fill" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Ish <span class="gradient-text">tajribam</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024 - Hozirgacha</div>
+                        <div class="timeline-content">
+                            <h3>Katta Frontend Developer</h3>
+                            <h4>Tech Solutions</h4>
+                            <p>React va TypeScript yordamida murakkab web ilovalar yaratish.
+                               10 kishilik jamoa bilan hamkorlikda loyihalarni boshqarish.</p>
+                            <div class="timeline-tech">
+                                <span>React</span>
+                                <span>TypeScript</span>
+                                <span>Redux</span>
+                                <span>Material UI</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024 - 2026</div>
+                        <div class="timeline-content">
+                            <h3>Frontend Developer</h3>
+                            <h4>Digital Agency</h4>
+                            <p>Turli xil mijozlar uchun landing page va web ilovalar yaratish.
+                               Responsive design va cross-browser compatibility.</p>
+                            <div class="timeline-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2025 - 2026</div>
+                        <div class="timeline-content">
+                            <h3>Junior Developer</h3>
+                            <h4>Startup</h4>
+                            <p>Kichik loyihalarda qatnashish, web saytlarni support qilish
+                               va yangi texnologiyalarni o'rganish.</p>
+                            <div class="timeline-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Mening <span class="gradient-text">loyihalarim</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Projects will be loaded via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Men bilan <span class="gradient-text">bog'laning</span></h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Keling, bog'lanaylik</h3>
+                        <p>Har qanday savol yoki loyiha takliflari uchun men bilan bog'lanishingiz mumkin. Men odatda 24 soat ichida javob beraman.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Telefon</h4>
+                                    <p>+998 90 123 45 67</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p>mansurbek.dev@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Manzil</h4>
+                                    <p>Toshkent, O'zbekiston</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm" onsubmit="handleContact(event)">
+                            <div class="form-group">
+                                <input type="text" id="name" required placeholder="Ismingiz">
+                                <label for="name">Ismingiz</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required placeholder="Emailingiz">
+                                <label for="email">Emailingiz</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" required placeholder="Mavzu">
+                                <label for="subject">Mavzu</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="5" required placeholder="Xabaringiz"></textarea>
+                                <label for="message">Xabaringiz</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">
+                                <i class="fas fa-paper-plane"></i>
+                                Xabar yuborish
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <span class="logo-text">M.</span>
+                    </div>
+                    <div class="footer-text">
+                        <p>&copy; 2024 Mansurbek. Barcha huquqlar himoyalangan.</p>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
