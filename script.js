@@ -254,6 +254,71 @@ function handleContact(event) {
     event.target.reset();
 }
 
+// ============= TELEGRAM BOT QO'SHILGAN QISM =============
+// Telegram bot ma'lumotlari
+const BOT_TOKEN = '8295893372:AAGUzovc4nEHpob456WPzr5Cw1ggmbKM6Oo'; // @BotFather dan olgan tokeningiz
+const CHAT_ID = '394304823'; // getUpdates dan olgan chat ID
+
+// Telegram form handler (handleContact funksiyasini to'liq almashtiramiz)
+function handleContact(event) {
+    event.preventDefault();
+
+    // Form ma'lumotlarini olish
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    // Telegramga yuboriladigan xabar matni
+    const telegramMessage = `
+📨 *Yangi xabar* 📨
+
+👤 *Ism:* ${name}
+📧 *Email:* ${email}
+📝 *Mavzu:* ${subject}
+💬 *Xabar:*
+${message}
+    `;
+
+    // Submit tugmasini o'chirish
+    const submitBtn = event.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Yuborilmoqda...';
+    submitBtn.disabled = true;
+
+    // Telegram API ga so'rov yuborish
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: telegramMessage,
+            parse_mode: 'Markdown'
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            showNotification('Xabaringiz yuborildi! Tez orada javob beramiz.', 'success');
+            event.target.reset();
+        } else {
+            showNotification('Xatolik yuz berdi. Iltimos qayta urinib ko\'ring.', 'error');
+        }
+    })
+    .catch(error => {
+        console.error('Xatolik:', error);
+        showNotification('Internet aloqasini tekshirib qayta urinib ko\'ring.', 'error');
+    })
+    .finally(() => {
+        // Tugmani qayta tiklash
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    });
+}
+// ============= TELEGRAM BOT QISM TUGADI =============
+
 // Show notification
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
