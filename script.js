@@ -1,3 +1,4 @@
+
 // Loading Screen
 window.addEventListener('load', function() {
     const loadingScreen = document.getElementById('loadingScreen');
@@ -63,67 +64,67 @@ function initTyped() {
     type();
 }
 
-// Projects Data
-const projects = [
-    {
-        title: 'E-Commerce Platform',
-        description: 'React va TypeScript yordamida yaratilgan to\'liq funksional online do\'kon',
-        image: 'fa-shopping-cart',
-        tech: ['React', 'TypeScript', 'Redux', 'Material UI'],
-        live: '#',
-        github: '#'
-    },
-    {
-        title: 'Portfolio Website',
-        description: '3D elementlar va animatsiyalar bilan boyitilgan shaxsiy portfolio',
-        image: 'fa-user-tie',
-        tech: ['HTML5', 'CSS3', 'JavaScript', 'Three.js'],
-        live: '#',
-        github: '#'
-    },
-    {
-        title: 'Task Management App',
-        description: 'Vazifalarni boshqarish uchun interaktiv web ilova',
-        image: 'fa-tasks',
-        tech: ['React', 'Context API', 'Tailwind CSS', 'Firebase'],
-        live: '#',
-        github: '#'
-    },
-    {
-        title: 'Weather App',
-        description: 'Real vaqt ob-havo ma\'lumotlarini ko\'rsatuvchi ilova',
-        image: 'fa-cloud-sun',
-        tech: ['JavaScript', 'API', 'CSS3', 'Responsive'],
-        live: '#',
-        github: '#'
-    }
-];
+// // Projects Data
+// const projects = [
+//     {
+//         title: 'E-Commerce Platform',
+//         description: 'React va TypeScript yordamida yaratilgan to\'liq funksional online do\'kon',
+//         image: 'fa-shopping-cart',
+//         tech: ['React', 'TypeScript', 'Redux', 'Material UI'],
+//         live: '#',
+//         github: '#'
+//     },
+//     {
+//         title: 'Portfolio Website',
+//         description: '3D elementlar va animatsiyalar bilan boyitilgan shaxsiy portfolio',
+//         image: 'fa-user-tie',
+//         tech: ['HTML5', 'CSS3', 'JavaScript', 'Three.js'],
+//         live: '#',
+//         github: '#'
+//     },
+//     {
+//         title: 'Task Management App',
+//         description: 'Vazifalarni boshqarish uchun interaktiv web ilova',
+//         image: 'fa-tasks',
+//         tech: ['React', 'Context API', 'Tailwind CSS', 'Firebase'],
+//         live: '#',
+//         github: '#'
+//     },
+//     {
+//         title: 'Weather App',
+//         description: 'Real vaqt ob-havo ma\'lumotlarini ko\'rsatuvchi ilova',
+//         image: 'fa-cloud-sun',
+//         tech: ['JavaScript', 'API', 'CSS3', 'Responsive'],
+//         live: '#',
+//         github: '#'
+//     }
+// ];
 
-// Initialize Projects
-function initProjects() {
-    const projectsGrid = document.getElementById('projectsGrid');
+// // Initialize Projects
+// function initProjects() {
+//     const projectsGrid = document.getElementById('projectsGrid');
 
-    projectsGrid.innerHTML = projects.map(project => `
-        <div class="project-card">
-            <div class="project-image">
-                <i class="fas ${project.image}"></i>
-            </div>
-            <h3>${project.title}</h3>
-            <p>${project.description}</p>
-            <div class="project-tech">
-                ${project.tech.map(t => `<span>${t}</span>`).join('')}
-            </div>
-            <div class="project-links">
-                <a href="${project.live}" class="project-link" target="_blank">
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="${project.github}" class="project-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-        </div>
-    `).join('');
-}
+//     projectsGrid.innerHTML = projects.map(project => `
+//         <div class="project-card">
+//             <div class="project-image">
+//                 <i class="fas ${project.image}"></i>
+//             </div>
+//             <h3>${project.title}</h3>
+//             <p>${project.description}</p>
+//             <div class="project-tech">
+//                 ${project.tech.map(t => `<span>${t}</span>`).join('')}
+//             </div>
+//             <div class="project-links">
+//                 <a href="${project.live}" class="project-link" target="_blank">
+//                     <i class="fas fa-external-link-alt"></i>
+//                 </a>
+//                 <a href="${project.github}" class="project-link" target="_blank">
+//                     <i class="fab fa-github"></i>
+//                 </a>
+//             </div>
+//         </div>
+//     `).join('');
+// }
 
 // 3D Background
 function init3DBackground() {
